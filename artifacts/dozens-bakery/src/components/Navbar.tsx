@@ -33,17 +33,16 @@ export default function Navbar({ onCartClick, activeSection }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo image — transparent blend on dark bg */}
+          {/* Transparent PNG logo */}
           <button
             onClick={() => scrollTo("hero")}
             className="flex items-center focus:outline-none"
             aria-label="Go to top"
           >
             <img
-              src="/logo.jpg"
-              alt="Dozens Bakery logo"
-              className="h-10 w-auto rounded"
-              style={{ mixBlendMode: "multiply" }}
+              src="/logo-transparent.png"
+              alt="Dozens Bakery"
+              className="h-11 w-auto"
             />
           </button>
 

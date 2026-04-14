@@ -10,41 +10,32 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Hero"
     >
-      {/* Background */}
+      {/* Video background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="https://cdn.prod.website-files.com/60227199efe7a5c6cf6ba585/604b36b303ba7a074c0c490b_Home_halo-transcode.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+      />
+
+      {/* Dark overlay so text is legible */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, #3C2415 0%, #5a3820 40%, #3C2415 100%)",
+            "linear-gradient(to bottom, rgba(30,15,5,0.72) 0%, rgba(40,20,8,0.80) 60%, rgba(30,15,5,0.88) 100%)",
         }}
       />
 
-      {/* Decorative industrial pattern */}
+      {/* Subtle warm radial glow */}
       <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            45deg,
-            #FBB03B 0px,
-            #FBB03B 1px,
-            transparent 1px,
-            transparent 20px
-          ), repeating-linear-gradient(
-            -45deg,
-            #FBB03B 0px,
-            #FBB03B 1px,
-            transparent 1px,
-            transparent 20px
-          )`,
-        }}
-      />
-
-      {/* Warm radial glow */}
-      <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(251,176,59,0.15) 0%, transparent 70%)",
+            "radial-gradient(ellipse at center, rgba(251,176,59,0.08) 0%, transparent 65%)",
         }}
       />
 
@@ -61,7 +52,7 @@ export default function HeroSection() {
 
         {/* Main heading */}
         <h1
-          className="font-heading font-black text-white leading-none mb-4"
+          className="font-heading font-black text-white leading-none mb-4 drop-shadow-lg"
           style={{ fontSize: "clamp(3rem, 10vw, 7rem)" }}
         >
           <span className="block">DOZENS</span>
@@ -69,20 +60,12 @@ export default function HeroSection() {
         </h1>
 
         {/* Tagline */}
-        <p className="text-amber-200 text-lg sm:text-xl font-medium mb-3 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-amber-100 text-lg sm:text-xl font-medium mb-2 max-w-2xl mx-auto leading-relaxed drop-shadow">
           Industrial Bakery &amp; Factory Outlet
         </p>
-        <p className="text-amber-300/80 text-base sm:text-lg mb-10">
+        <p className="text-amber-200/80 text-base sm:text-lg mb-10 drop-shadow">
           Supplying fresh &amp; frozen excellence since 1998
         </p>
-
-        {/* Serving industries */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10 text-sm text-amber-200/80">
-          <span className="border border-amber-700 rounded px-3 py-1">Fast Food Industry</span>
-          <span className="border border-amber-700 rounded px-3 py-1">Catering</span>
-          <span className="border border-amber-700 rounded px-3 py-1">Hospitality</span>
-          <span className="border border-amber-700 rounded px-3 py-1">Factory Outlet</span>
-        </div>
 
         {/* CTA */}
         <button
@@ -93,9 +76,9 @@ export default function HeroSection() {
         </button>
 
         {/* Scroll indicator */}
-        <div className="mt-16 flex flex-col items-center gap-2 text-amber-600/60">
-          <div className="w-6 h-10 border-2 border-amber-700 rounded-full flex justify-center pt-2">
-            <div className="w-1 h-2 bg-amber-600 rounded-full animate-bounce" />
+        <div className="mt-16 flex flex-col items-center gap-2 text-amber-500/60">
+          <div className="w-6 h-10 border-2 border-amber-600/50 rounded-full flex justify-center pt-2">
+            <div className="w-1 h-2 bg-amber-500/60 rounded-full animate-bounce" />
           </div>
           <span className="text-xs tracking-widest uppercase">Scroll</span>
         </div>

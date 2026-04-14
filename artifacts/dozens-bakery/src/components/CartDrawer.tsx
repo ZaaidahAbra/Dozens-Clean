@@ -1,4 +1,4 @@
-import { X, Minus, Plus, Trash2, MessageCircle, ShoppingBag } from "lucide-react";
+import { X, Minus, Plus, Trash2, MessageCircle, ShoppingBag, ImageIcon } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 interface CartDrawerProps {
@@ -78,54 +78,57 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
             items.map((item) => (
               <div
                 key={item.product.id}
-                className="bg-amber-50 border border-amber-100 rounded-xl p-3"
+                className="bg-gray-50 border border-gray-100 rounded-xl overflow-hidden flex gap-0"
               >
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-2xl" aria-hidden="true">
-                      {item.product.emoji}
-                    </span>
+                {/* Image placeholder — same style as product card */}
+                <div className="w-20 shrink-0 bg-gradient-to-br from-stone-100 to-stone-200 flex flex-col items-center justify-center gap-1 self-stretch">
+                  <ImageIcon className="w-6 h-6 text-stone-300" strokeWidth={1.5} />
+                </div>
+
+                {/* Info */}
+                <div className="flex-1 p-3">
+                  <div className="flex items-start justify-between gap-1 mb-1">
                     <div>
                       <p className="font-heading font-bold text-[#3C2415] text-base leading-tight">
                         {item.product.name}
                       </p>
-                      <p className="text-xs text-gray-500">{item.product.category}</p>
+                      <p className="text-xs text-gray-400">{item.product.category}</p>
                     </div>
-                  </div>
-                  <button
-                    onClick={() => removeItem(item.product.id)}
-                    className="p-1 text-gray-400 hover:text-red-500 transition-colors"
-                    aria-label={`Remove ${item.product.name}`}
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  {/* Qty controls */}
-                  <div className="flex items-center gap-2 bg-white border border-amber-200 rounded-lg px-2 py-1">
                     <button
-                      onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                      className="text-[#3C2415] hover:text-[#FBB03B] transition-colors"
-                      aria-label="Decrease quantity"
+                      onClick={() => removeItem(item.product.id)}
+                      className="p-1 text-gray-300 hover:text-red-400 transition-colors shrink-0"
+                      aria-label={`Remove ${item.product.name}`}
                     >
-                      <Minus className="w-4 h-4" />
+                      <Trash2 className="w-3.5 h-3.5" />
                     </button>
-                    <span className="font-bold text-[#3C2415] w-6 text-center">
-                      {item.quantity}
+                  </div>
+
+                  <div className="flex items-center justify-between mt-2">
+                    {/* Qty controls */}
+                    <div className="flex items-center gap-2 bg-white border border-gray-200 rounded-lg px-2 py-0.5">
+                      <button
+                        onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
+                        className="text-[#3C2415] hover:text-[#FBB03B] transition-colors"
+                        aria-label="Decrease quantity"
+                      >
+                        <Minus className="w-3.5 h-3.5" />
+                      </button>
+                      <span className="font-bold text-[#3C2415] w-5 text-center text-sm">
+                        {item.quantity}
+                      </span>
+                      <button
+                        onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                        className="text-[#3C2415] hover:text-[#FBB03B] transition-colors"
+                        aria-label="Increase quantity"
+                      >
+                        <Plus className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+
+                    <span className="font-heading font-black text-[#3C2415] text-lg">
+                      R{item.product.price * item.quantity}
                     </span>
-                    <button
-                      onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                      className="text-[#3C2415] hover:text-[#FBB03B] transition-colors"
-                      aria-label="Increase quantity"
-                    >
-                      <Plus className="w-4 h-4" />
-                    </button>
                   </div>
-
-                  <span className="font-heading font-black text-[#3C2415] text-xl">
-                    R{item.product.price * item.quantity}
-                  </span>
                 </div>
               </div>
             ))
@@ -134,10 +137,10 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
 
         {/* Footer */}
         {items.length > 0 && (
-          <div className="border-t border-amber-100 p-4 space-y-3">
+          <div className="border-t border-gray-100 p-4 space-y-3">
             {/* Total */}
             <div className="flex items-center justify-between">
-              <span className="font-medium text-gray-600">Total</span>
+              <span className="font-medium text-gray-500 text-sm">Total</span>
               <span className="font-heading font-black text-[#3C2415] text-3xl">
                 R{totalPrice}
               </span>
@@ -160,7 +163,7 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
 
             <button
               onClick={clearCart}
-              className="w-full text-xs text-gray-400 hover:text-gray-600 transition-colors py-1"
+              className="w-full text-xs text-gray-400 hover:text-gray-500 transition-colors py-1"
             >
               Clear cart
             </button>

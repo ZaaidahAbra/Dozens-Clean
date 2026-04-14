@@ -21,9 +21,7 @@ export default function Navbar({ onCartClick, activeSection }: NavbarProps) {
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     setMobileOpen(false);
   };
 
@@ -35,18 +33,18 @@ export default function Navbar({ onCartClick, activeSection }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo image — transparent blend on dark bg */}
           <button
             onClick={() => scrollTo("hero")}
-            className="flex items-center gap-2 focus:outline-none"
+            className="flex items-center focus:outline-none"
             aria-label="Go to top"
           >
-            <div className="w-9 h-9 rounded-full bg-[#FBB03B] flex items-center justify-center font-heading font-black text-[#3C2415] text-xl leading-none">
-              D
-            </div>
-            <span className="font-heading font-bold text-white text-xl tracking-wide uppercase">
-              Dozens Bakery
-            </span>
+            <img
+              src="/logo.jpg"
+              alt="Dozens Bakery logo"
+              className="h-10 w-auto rounded"
+              style={{ mixBlendMode: "multiply" }}
+            />
           </button>
 
           {/* Desktop links */}
@@ -81,7 +79,6 @@ export default function Navbar({ onCartClick, activeSection }: NavbarProps) {
               )}
             </button>
 
-            {/* Mobile menu toggle */}
             <button
               className="md:hidden p-2 text-white hover:text-[#FBB03B] transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}

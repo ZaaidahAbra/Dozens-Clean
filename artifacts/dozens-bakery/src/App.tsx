@@ -45,9 +45,6 @@ function AppContent() {
   return (
     <>
       <SEOSchema />
-      {/* "Proudly Reopened" ribbon in corner */}
-      <div className="ribbon-badge" aria-hidden="true" />
-
       <Navbar onCartClick={() => setCartOpen(true)} activeSection={activeSection} />
 
       <main>

@@ -10,7 +10,7 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Hero"
     >
-      {/* Background: dark chocolate overlay on gradient */}
+      {/* Background */}
       <div
         className="absolute inset-0"
         style={{
@@ -53,10 +53,8 @@ export default function HeroSection() {
         {/* Est badge */}
         <div className="inline-flex items-center gap-2 mb-6">
           <div className="h-px w-12 bg-[#FBB03B]" />
-          <span
-            className="font-heading text-[#FBB03B] text-sm font-bold tracking-[0.2em] uppercase"
-          >
-            Est. 1998
+          <span className="font-heading text-[#FBB03B] text-sm font-bold tracking-[0.2em] uppercase">
+            Est. 1998 &amp; 2026
           </span>
           <div className="h-px w-12 bg-[#FBB03B]" />
         </div>
@@ -74,15 +72,9 @@ export default function HeroSection() {
         <p className="text-amber-200 text-lg sm:text-xl font-medium mb-3 max-w-2xl mx-auto leading-relaxed">
           Industrial Bakery &amp; Factory Outlet
         </p>
-        <p className="text-amber-300/80 text-base sm:text-lg mb-2">
+        <p className="text-amber-300/80 text-base sm:text-lg mb-10">
           Supplying fresh &amp; frozen excellence since 1998
         </p>
-
-        {/* Reopened banner */}
-        <div className="inline-flex items-center gap-3 mt-6 mb-10 bg-[#FBB03B] text-[#3C2415] px-6 py-3 rounded font-heading font-bold text-lg tracking-wide uppercase shadow-lg">
-          <span className="text-2xl">🎉</span>
-          Proudly Reopened 2026
-        </div>
 
         {/* Serving industries */}
         <div className="flex flex-wrap justify-center gap-4 mb-10 text-sm text-amber-200/80">

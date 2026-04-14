@@ -114,7 +114,7 @@ export default function ProductsSection() {
                   <div className="flex-1 h-px bg-gray-200" />
                   <span className="text-xs text-gray-400 font-medium">{catProducts.length} items</span>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                   {catProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
@@ -123,7 +123,7 @@ export default function ProductsSection() {
             );
           })
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {filtered.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

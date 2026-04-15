@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -66,6 +67,7 @@ export default function App() {
   return (
     <CartProvider>
       <AppContent />
+      <Analytics />
     </CartProvider>
   );
 }

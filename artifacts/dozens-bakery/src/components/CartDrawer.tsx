@@ -6,7 +6,7 @@ interface CartDrawerProps {
   onClose: () => void;
 }
 
-const WHATSAPP_NUMBER = "27640059855";
+const WHATSAPP_NUMBER = "27814758797";
 
 export default function CartDrawer({ open, onClose }: CartDrawerProps) {
   const { items, updateQuantity, removeItem, totalPrice, totalItems, clearCart } =

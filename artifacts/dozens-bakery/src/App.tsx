@@ -8,7 +8,7 @@ import HoursSection from "@/components/HoursSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
-import SEOSchema from "@/components/SEOSchema";
+// import SEOSchema from "@/components/SEOSchema";
 
 const SECTIONS = ["hero", "products", "about", "hours", "contact"];
 
@@ -44,7 +44,7 @@ function AppContent() {
 
   return (
     <>
-      <SEOSchema />
+      {/* <SEOSchema /> */}
       <Navbar onCartClick={() => setCartOpen(true)} activeSection={activeSection} />
 
       <main>
